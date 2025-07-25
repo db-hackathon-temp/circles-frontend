@@ -100,7 +100,7 @@ function RegisterForm() {
   };
 
   return (
-    <div className="form-container">
+    <div>
       <h2>Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="row">

@@ -32,7 +32,7 @@ function LoginForm() {
   };
 
   return (
-    <div className="form-container slide-in">
+    <div>
       <h2>User Login</h2>
       <form onSubmit={handleLogin}>
         <input

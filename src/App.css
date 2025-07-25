@@ -1,229 +1,233 @@
-/* Full-screen setup */
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-html, body, #root{
-  height: 100%;
-  width: 100%;
+/* App.css */
+body, html {
   margin: 0;
   padding: 0;
-  background: #f4f6f8;
-}
-*{
-font-family: "Varela Round", sans-serif;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  background: #007BFF;
-  padding: 15px 25px;
-  color: white;
-  border-radius: 12px;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.header nav {
-  display: flex;
-  gap: 10px;
-}
-
-.header button {
-  padding: 10px 20px;
-  background: white;
-  color: #007BFF;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: opacity 0.3s ease;
-}
-
-.header button:hover {
-  opacity: 0.7;
-}
-
-/* Container fills the screen */
-.container {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
   height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Header with buttons aligned */
-.header {
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #007BFF;
-  padding: 15px 25px;
-  color: white;
-  border-radius: 0 0 12px 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 16px 32px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-.header .nav-buttons {
+.brand {
   display: flex;
-  gap: 12px;
-}
-
-.header .nav-buttons button {
-  padding: 8px 16px;
-  background: white;
-  color: #007BFF;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-}
-
-.header .nav-buttons button:hover {
-  opacity: 0.7;
-}
-
-/* Hide nav buttons when form is active */
-.header .nav-buttons.hidden {
-  display: none;
-}
-
-.logo {
-  width: 80px; /* or whatever size you prefer */
-  height: auto; /* maintain aspect ratio */
-  margin-right: 10px; /* optional spacing from text */
-  vertical-align: middle; /* aligns with heading if inline */
-}
-
-
-.welcome {
-  padding: 60px 20px;
-  text-align: center;
-  font-size: 22px;
-  color: #333;
-}
-.mainhead{
-  display: flex;
-}
-/* Main Content Area */
-.main-content {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
   align-items: center;
-  padding: 40px 20px;
-  position: relative;
-  min-height: 400px;
+  cursor: pointer;
+  gap: 10px;
+  user-select: none;
 }
 
-/* Right-aligned form */
-.right-form {
-  max-width: 400px;
-  width: 100%;
-  margin-right: 30px;
+.brand img.logo {
+  height: 70px;
+  width: auto;
 }
 
-/* Form styling */
-.form-container {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  width: 100%;
+.brand h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
 }
 
-.form-container h2 {
-  margin-bottom: 24px;
-  color: #333;
+button {
+  margin-left: 8px;
+  padding: 8px 16px;
+  font-size: 18px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
 }
 
-.form-container form {
-  display: flex;
-  flex-direction: column;
+button:hover {
+  background-color: #333;
 }
 
-.row {
-  display: flex;
-  gap: 15px;
+.logout-btn {
+  background-color: red;
 }
 
-.row input {
-  flex: 1;
+.logout-btn:hover {
+  background-color: darkred;
 }
 
-/* Input and select styles */
-.form-container input,
-.form-container select {
-  padding: 12px 16px;
-  margin-bottom: 18px;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  transition: border-color 0.3s;
-  width: 100%;
+.app-main {
+  flex-grow: 1;
+  padding: 40px 32px;
+  max-width: 900px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
-.form-container input:focus,
-.form-container select:focus {
-  border-color: #007BFF;
+.form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  /* padding: 32px; */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  font-size: 25px;
+  color: #666;
+  text-align: center;
+  user-select: none;
+}
+
+.app-footer {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.05);
+}
+
+
+.form-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.form-wrapper h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+}
+
+.form-wrapper form input,
+.form-wrapper form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-wrapper form input:focus,
+.form-wrapper form select:focus {
   outline: none;
+  border-color: #000;
 }
 
-/* Button */
-.form-container button {
+.form-wrapper .row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-wrapper .row input {
+  flex: 1;
+}
+
+.form-wrapper .error {
+  color: #cc0000;
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.form-wrapper button {
+  width: 100%;
   padding: 12px;
-  background: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 20px;
   font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: opacity 0.3s ease;
-}
-/* This must be part of App.css */
-.nav-buttons.hidden {
-  display: none;
+  user-select: none;
+  transition: background-color 0.25s ease;
 }
 
-.form-container button:hover {
-  opacity: 0.8;
+.form-wrapper button:hover {
+  background-color: #333;
 }
 
+
+/* Style inputs and textarea uniformly */
+input[type="text"],
+input[type="url"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  resize: vertical; /* Allow vertical resize for textarea */
+}
+
+/* Style for the label with checkbox */
+label {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Add space between checkbox and label text */
+label input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Error messages styling */
 .error {
   color: red;
-  margin-bottom: 12px;
-  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
 
-/* Slide-in Animation */
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
+/* Submit button styling */
+button[type="submit"] {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
 }
 
-.slide-in {
-  animation: slideInFromRight 0.4s ease-out forwards;
-}
-
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #007BFF;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 20px auto;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+button[type="submit"]:hover {
+  background-color: #333;
 }

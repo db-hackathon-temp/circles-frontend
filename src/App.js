@@ -18,7 +18,6 @@ function App() {
   useState(() => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
-
     if (token && role) {
       setIsAuthenticated(true);
       navigate('/dashboard');
@@ -39,13 +38,15 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <header className="header">
-        <div className='mainhead'>
+    <div className="app">
+      <header className="app-header">
+        <div className="brand" onClick={() => {
+          setActiveForm('');
+          navigate('/');
+        }}>
           <img src="../images/SharkCircle1.png" alt="SharkCircles Logo" className="logo" />
-          <h1>SharkCircles</h1>
+          <h1>Shark Circles</h1>
         </div>
-
         <nav>
           {!isAuthenticated && !activeForm && (
             <>
@@ -54,35 +55,22 @@ function App() {
             </>
           )}
           {isAuthenticated && (
-            <button
-              onClick={handleLogout}
-              style={{
-                backgroundColor: 'red',
-                color: 'white',
-                border: 'none',
-                padding: '8px 16px',
-                marginLeft: '10px',
-                borderRadius: '4px',
-                cursor: 'pointer'
-              }}
-            >
-              Logout
-            </button>
+            <button className="logout-btn" onClick={handleLogout}>Logout</button>
           )}
         </nav>
       </header>
 
-      <main className="main-content">
+      <main className="app-main">
         <Routes>
           <Route
             path="/"
             element={
               !activeForm ? (
-                <div className="welcome">Welcome! Please Login or Register.</div>
+                <p className="welcome">Welcome! Please Login or Register.</p>
               ) : activeForm === 'login' ? (
-                <div className="form-wrapper slide-in right-form"><LoginForm /></div>
+                <div className="form-wrapper"><LoginForm /></div>
               ) : (
-                <div className="form-wrapper slide-in right-form"><RegisterForm /></div>
+                <div className="form-wrapper"><RegisterForm /></div>
               )
             }
           />
@@ -94,6 +82,10 @@ function App() {
           <Route path="/create-circle" element={<CreateCirclePage />} />
         </Routes>
       </main>
+
+      <footer className="app-footer">
+        <p>&copy; {new Date().getFullYear()} SharkCircles</p>
+      </footer>
     </div>
   );
 }
