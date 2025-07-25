@@ -1,0 +1,49 @@
+.form-fullwidth {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row input {
+  flex: 1;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+/* Full-screen setup */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+html, body, #root{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f4f6f8;
+}
+*{
+font-family: "Varela Round", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: #007BFF;
+  padding: 15px 25px;
+  color: white;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header nav {
+  display: flex;
+  gap: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header button {
+  padding: 10px 20px;
+  background: white;
+  color: #007BFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.header button:hover {
+  opacity: 0.7;
+}
+
+/* Container fills the screen */
+.container {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+/* Header with buttons aligned */
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: #007BFF;
+  padding: 15px 25px;
   color: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.header .nav-buttons {
+  display: flex;
+  gap: 12px;
 }
 
-@keyframes App-logo-spin {
+.header .nav-buttons button {
+  padding: 8px 16px;
+  background: white;
+  color: #007BFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.header .nav-buttons button:hover {
+  opacity: 0.7;
+}
+
+/* Hide nav buttons when form is active */
+.header .nav-buttons.hidden {
+  display: none;
+}
+
+.logo {
+  width: 80px; /* or whatever size you prefer */
+  height: auto; /* maintain aspect ratio */
+  margin-right: 10px; /* optional spacing from text */
+  vertical-align: middle; /* aligns with heading if inline */
+}
+
+
+.welcome {
+  padding: 60px 20px;
+  text-align: center;
+  font-size: 22px;
+  color: #333;
+}
+.mainhead{
+  display: flex;
+}
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  min-height: 400px;
+}
+
+/* Right-aligned form */
+.right-form {
+  max-width: 400px;
+  width: 100%;
+  margin-right: 30px;
+}
+
+/* Form styling */
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+.form-container h2 {
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 15px;
+}
+
+.row input {
+  flex: 1;
+}
+
+/* Input and select styles */
+.form-container input,
+.form-container select {
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Button */
+.form-container button {
+  padding: 12px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+/* This must be part of App.css */
+.nav-buttons.hidden {
+  display: none;
+}
+
+.form-container button:hover {
+  opacity: 0.8;
+}
+
+.error {
+  color: red;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+/* Slide-in Animation */
+@keyframes slideInFromRight {
   from {
-    transform: rotate(0deg);
+    transform: translateX(100%);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0%);
+    opacity: 1;
   }
+}
+
+.slide-in {
+  animation: slideInFromRight 0.4s ease-out forwards;
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #007BFF;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
