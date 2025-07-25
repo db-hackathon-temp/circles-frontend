@@ -14,13 +14,25 @@ function App() {
   const [activeForm, setActiveForm] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
+console.log('i am autheticated');
 
-  useState(() => {
+  useEffect(() => {
     const token = localStorage.getItem('token');
     const role = localStorage.getItem('role');
+     console.log('role is',role);
     if (token && role) {
       setIsAuthenticated(true);
-      navigate('/dashboard');
+  // navigate('/kyc');
+    //   if (role === 'founder') {
+    //     console.log('nevigate to founder registrn');
+    //   navigate('/founders-registration');
+    // } else if (role === 'shark') {
+    //      console.log('nevigate to shark registrn');
+    //   navigate('/sharks-registration');
+    // } else {
+    //   navigate('/dashboard');
+    // }
+    // 
     }
   }, [navigate]);
 

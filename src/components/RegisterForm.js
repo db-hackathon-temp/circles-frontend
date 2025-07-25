@@ -87,7 +87,8 @@ function RegisterForm() {
         }
 
         localStorage.setItem('role', formData.role);
-        navigate('/kyc');
+      //  navigate('/dashboard');  // go to dashboard after register
+       navigate('/kyc');
       } catch (err) {
         console.error('Error during registration:', err);
         alert('Something went wrong. Please try again later.');

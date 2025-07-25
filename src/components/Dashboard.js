@@ -7,7 +7,7 @@ function Dashboard() {
   const [myCircles, setMyCircles] = useState([]);
 
  useEffect(() => {
-  const storedType = localStorage.getItem('userType');
+  const storedType = localStorage.getItem('role');
   setUserType(storedType);
 
   const token = localStorage.getItem('token'); 
@@ -24,7 +24,7 @@ function Dashboard() {
       if (!response.ok) {
         throw new Error('Failed to fetch circles');
       }
-
+console.log(storedType)
       const data = await response.json();
       setMyCircles(data);
     } catch (error) {
@@ -44,17 +44,23 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       {/* Header with user type */}
-      <div className="dashboard-header">
-        <div>
-          <h2>Welcome {userType === 'founder' ? 'Founder' : userType === 'shark' ? 'Shark' : 'User'}</h2>
-          <p>Your Dashboard</p>
-        </div>
-        <Link to="/available-circles" className="nav-button">
+       <div className="button-row">
+             <Link to="/available-circles" className="nav-button">
           Available Circles
         </Link>
         <Link to="/create-circle" className="nav-button">
   Create Circle
 </Link>
+ <Link to="/available-sharks" className="nav-button">Available Sharks</Link>
+    <Link to="/available-founders" className="nav-button">Available Founders</Link>
+          </div>
+      <div className="dashboard-header">
+        <div>
+          <h2>Welcome {userType === 'founder' ? 'Founder' : userType === 'shark' ? 'Shark' : 'User'}</h2>
+          <p>Your Dashboard</p>
+        </div>
+         
+       
 
       </div>
 

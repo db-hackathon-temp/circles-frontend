@@ -65,3 +65,28 @@ button:hover {
   display: flex;
   gap: 10px;
 }
+
+.button-row {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.dash-head{
+  margin-top: 20px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

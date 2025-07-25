@@ -92,11 +92,13 @@ function FoundersRegistrationForm() {
 
         const data = await response.json();
         console.log('Founder profile submitted successfully:', data);
+        alert('Founder Registered successfully');
         navigate('/dashboard');
 
       } catch (err) {
         console.error('Error during founder profile submission:', err);
         alert('Something went wrong. Please try again.');
+      
       }
     }
   };
